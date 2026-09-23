@@ -53,7 +53,8 @@ if response2.status_code == 200:
     
 else: print(f"Error {response.status_code}. Could not find weather for {args.city}, {args.country}")
 
-{
+wmo = {
+    
   "0": "Clear sky",
   "1": "Mainly clear",
   "2": "Partly cloudy",
