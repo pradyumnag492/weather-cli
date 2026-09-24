@@ -3,7 +3,7 @@ A weather cli written in python. My first big python project
 
 **AI USAGE**
 
-Code was written by hand, by me. I used AI extensively for debugging and figuring out what to do since I am a beginner at python, and coding in general.
+Code was written by hand, by me. I used AI extensively for debugging and figuring out what to do since I am a beginner at python, and coding in general. And also writing code that I found repetitive, like that giant block of if statements printing wmo code outputs. I wrote the initial logic, but i used gemini to quickly alter it and repeat it for all 16 days.
 
 **PR's and contributing**
 I'm not accepting pull requests or contributions. But you're welcome to fork the repo and make your own project!
