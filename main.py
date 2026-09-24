@@ -23,8 +23,7 @@ elif args.city and args.country:
     params = {"name": f"{args.city}, {args.country}"}
 
     thing = requests.get(
-        f"https://geocoding-api.open-meteo.com/v1/search", params=params
-    )
+        f"https://geocoding-api.open-meteo.com/v1/search", params=params)
     thing1 = thing.json()
 
     if "results" not in thing1:
@@ -51,7 +50,9 @@ response2 = requests.get(f"https://api.open-meteo.com/v1/forecast?latitude={lat}
 if response2.status_code == 200:
     print(f"Success! Weather found.")
     
-else: print(f"Error {response.status_code}. Could not find weather for {args.city}, {args.country}")
+else: print(f"Error {response.status_code}. Could not find weather")
+
+if 
 
 wmo = {
     
@@ -84,6 +85,41 @@ wmo = {
   "96": "Thunderstorm with slight hail",
   "99": "Thunderstorm with heavy hail"
 }
+
+
+if response["daily"]["weather_code"][1]:
+    if response["daily"]["weather_code"][1] == 0:
+        print("clear skies")
+    if response["daily"]["weather_code"][1] == 1:
+        print("mainly clear")
+    if response["daily"]["weather_code"][1] == 2:
+         print("partly cloudy")
+    if response["daily"]["weather_code"][1] == 3:
+         print("overcast")
+    if response["daily"]["weather_code"][1] == 45:
+        print("fog")
+    if response["daily"]["weather_code"][1] == 48:
+        print("depositing rime fog.")
+    if response["daily"]["weather_code"][1] == 51:
+        print("Light drizzle")
+    if response["daily"]["weather_code"][1] == 53:
+        print("moderate drizzle.")
+    if response["daily"]["weather_code"][1] == 55:
+        print("dense drizzle")
+    if response["daily"]["weather_code"][1] == 56:
+        print("light freeing drizzle.")
+    if response["daily"]["weather_code"][1] == 57:
+        print("Dense freezing drizzle")
+    if response["daily"]["weather_code"][1] == 61:
+        print("slight rain.")
+    if response["daily"]["weather_code"][1] == 63:
+        print("moderate rain.")
+    if response["daily"]["weather_code"][1] == 65:
+        print("heavy rain.")
+    
+     
+
+
 
 
 
