@@ -13,7 +13,7 @@ I'm not accepting pull requests or contributions. But you're welcome to fork the
 
 These may or may not be added. 
 
-* maybe add cool ascii art on startup?
+
 * add dynamic arguments and pass them to the api so that users can use whatever api parameters they want, instead of using a preconfigured set of parameters.
 * clean up some of my spaghetti code
 
