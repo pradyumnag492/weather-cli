@@ -16,6 +16,7 @@ These may or may not be added.
 
 * add dynamic arguments and pass them to the api so that users can use whatever api parameters they want, instead of using a preconfigured set of parameters.
 * clean up some of my spaghetti code
+* make it more readable, because right now it just prints blocks of texts.
 
 **What i learned**
 
