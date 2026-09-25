@@ -43,18 +43,29 @@ else:
 
 
 response = requests.get(f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&daily=weather_code,temperature_2m_min,temperature_2m_max,precipitation_probability_max,rain_sum,showers_sum,snowfall_sum,precipitation_sum&wind_speed_unit={args.wind_speed_unit}&temperature_unit={args.temp_unit}&precipitation_unit={args.precipitation_unit}&forecast_days={args.days}").json()
-thing = json.loads(response)
+
 
 
 response2 = requests.get(f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&daily=weather_code,temperature_2m_min,temperature_2m_max,precipitation_probability_max,rain_sum,showers_sum,snowfall_sum,precipitation_sum&wind_speed_unit={args.wind_speed_unit}&temperature_unit={args.temp_unit}&precipitation_unit={args.precipitation_unit}&forecast_days={args.days}")
 if response2.status_code == 200:
     print(f"Success! Weather found.")
     print(response)
-    
+
 else: print(f"Error {response.status_code}. Could not find weather")
 
 
+
+
+
+
+
+
+
 counter = 0
+
+
+
+
 
 for codes in response["daily"]["weather_code"]:
     if codes is not None:
@@ -198,22 +209,26 @@ for codes in response["daily"]["weather_code"]:
             print(f"weather for day {counter}: Thunderstorm with heavy hail.")
             if counter == {args.days}:
                 break
+print("------------------------------------------------------------------------------")
+
+countt = 0
+for temps1 in response["daily"]["temperature_2m_max"]:
+    if temps1 is not None:
+        countt += 1
+        if countt == args.days:
+            break
 
 count = 0
 for temps in response["daily"]["temperature_2m_min"]:
     if temps is not None:
         count += 1
-        print(f"({args.temp_unit}) Minimum 2 meter temperatures for Day {count}: {temps} {args.temp_unit}")
+        print(f"({args.temp_unit}) Minimum and maximum 2 meter temperatures for Day {count}: {temps} and {temps1} {args.temp_unit}")
         if count == args.days:
             break
 
+print("------------------------------------------------------------------------------") 
 
 
-
-
-
-    
-     
 
 
 
