@@ -2,6 +2,8 @@
 A weather cli written in python. My first big python project
 
 **INSTALLATION**
+
+
 make sure python is installed
 run this command
 
