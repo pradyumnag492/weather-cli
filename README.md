@@ -9,6 +9,8 @@ run this command
 
 pip install git+https://github.com/pradyumnag492/weather-cli.git
 
+Once it's installed, run it with the keyword "weather"
+
 
 **AI USAGE**
 
