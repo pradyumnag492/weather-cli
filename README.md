@@ -36,6 +36,8 @@ I learned how to parse json
 I learned how to build a cli tool using argparse
 
 
+<img width="932" height="539" alt="Screenshot 2026-09-26 at 7 35 44 PM" src="https://github.com/user-attachments/assets/be139d09-5638-4b21-b9b5-de3deaff3a7d" />
+
 
 
 
