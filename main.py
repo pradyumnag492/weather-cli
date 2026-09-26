@@ -1,3 +1,4 @@
+
 import requests
 import argparse
 import json
@@ -52,14 +53,53 @@ if response2.status_code == 200:
     print(response)
 
 else: print(f"Error {response.status_code}. Could not find weather")
+if "daily" in response and "time" in response["daily"] and len(response["daily"]["time"]) > 0:
+    day1 = response["daily"]["time"][0]
 
+if "daily" in response and "time" in response["daily"] and len(response["daily"]["time"]) > 1:
+    day2 = response["daily"]["time"][1]
 
+if "daily" in response and "time" in response["daily"] and len(response["daily"]["time"]) > 2:
+    day3 = response["daily"]["time"][2]
 
+if "daily" in response and "time" in response["daily"] and len(response["daily"]["time"]) > 3:
+    day4 = response["daily"]["time"][3]
 
+if "daily" in response and "time" in response["daily"] and len(response["daily"]["time"]) > 4:
+    day5 = response["daily"]["time"][4]
 
+if "daily" in response and "time" in response["daily"] and len(response["daily"]["time"]) > 5:
+    day6 = response["daily"]["time"][5]
 
+if "daily" in response and "time" in response["daily"] and len(response["daily"]["time"]) > 6:
+    day7 = response["daily"]["time"][6]
 
+if "daily" in response and "time" in response["daily"] and len(response["daily"]["time"]) > 7:
+    day8 = response["daily"]["time"][7]
 
+if "daily" in response and "time" in response["daily"] and len(response["daily"]["time"]) > 8:
+    day9 = response["daily"]["time"][8]
+
+if "daily" in response and "time" in response["daily"] and len(response["daily"]["time"]) > 9:
+    day10 = response["daily"]["time"][9]
+
+if "daily" in response and "time" in response["daily"] and len(response["daily"]["time"]) > 10:
+    day11 = response["daily"]["time"][10]
+
+if "daily" in response and "time" in response["daily"] and len(response["daily"]["time"]) > 11:
+    day12 = response["daily"]["time"][11]
+
+if "daily" in response and "time" in response["daily"] and len(response["daily"]["time"]) > 12:
+    day13 = response["daily"]["time"][12]
+
+if "daily" in response and "time" in response["daily"] and len(response["daily"]["time"]) > 13:
+    day14 = response["daily"]["time"][13]
+
+if "daily" in response and "time" in response["daily"] and len(response["daily"]["time"]) > 14:
+    day15 = response["daily"]["time"][14]
+
+if "daily" in response and "time" in response["daily"] and len(response["daily"]["time"]) > 15:
+    day16 = response["daily"]["time"][15]
 
 counter = 0
 
@@ -67,163 +107,236 @@ counter = 0
 
 
 
+
 for codes in response["daily"]["weather_code"]:
     if codes is not None:
+        counter += 1
+        if counter == 1:
+            nvar = day1
+        if counter == 2:
+            nvar = day2
+        if counter == 3:
+            nvar = day3
+        if counter == 4:
+            nvar = day4
+        if counter == 5:
+            nvar = day5
+        if counter == 6:
+            nvar = day6
+        if counter == 7:
+            nvar = day7
+        if counter == 8:
+            nvar = day8
+        if counter == 9:
+            nvar = day9
+        if counter == 10:
+            nvar = day10
+        if counter == 11:
+            nvar = day11
+        if counter == 12:
+            nvar = day12
+        if counter == 13:
+            nvar = day13
+        if counter == 14:
+            nvar = day14
+        if counter == 15:
+            nvar = day15
+        if counter == 16:
+            nvar = day16
+
         if codes == 0:
-            counter += 1
-            print(f"weather for day {counter}: Clear skies.")
+
+            print(f"weather for day {nvar}: Clear skies.")
             if counter == {args.days}:
                 break
         if codes == 1:
-            counter += 1
-            print(f"weather for day {counter}: Mainly clear.")
+
+            print(f"weather for day {nvar}: Mainly clear.")
             if counter == {args.days}:
                 break
         if codes == 2:
-            counter += 1
-            print(f"weather for day {counter}: Partly cloudy.")
+
+            print(f"weather for day {nvar}: Partly cloudy.")
             if counter == {args.days}:
                 break
         if codes == 3:
-            counter += 1
-            print(f"weather for day {counter}: Overcast.")
+
+            print(f"weather for day {nvar}: Overcast.")
             if counter == {args.days}:
                 break
         if codes == 45:
-            counter += 1
-            print(f"weather for day {counter}: Fog.")
+
+            print(f"weather for day {nvar}: Fog.")
             if counter == {args.days}:
                 break
         if codes == 48:
-            counter += 1
-            print(f"weather for day {counter}: Depositing rime fog.")
+
+            print(f"weather for day {nvar}: Depositing rime fog.")
             if counter == {args.days}:
                 break
         if codes == 51:
-            counter += 1
-            print(f"weather for day {counter}: Light drizzle.")
+
+            print(f"weather for day {nvar}: Light drizzle.")
             if counter == {args.days}:
                 break
         if codes == 53:
-            counter += 1
-            print(f"weather for day {counter}: Moderate drizzle.")
+
+            print(f"weather for day {nvar}: Moderate drizzle.")
             if counter == {args.days}:
                 break
         if codes == 55:
-            counter += 1
-            print(f"weather for day {counter}: Dense drizzle.")
+
+            print(f"weather for day {nvar}: Dense drizzle.")
             if counter == {args.days}:
                 break
         if codes == 56:
-            counter += 1
-            print(f"weather for day {counter}: Light freezing drizzle.")
+
+            print(f"weather for day {nvar}: Light freezing drizzle.")
             if counter == {args.days}:
                 break
         if codes == 57:
-            counter += 1
-            print(f"weather for day {counter}: Dense freezing drizzle.")
+
+            print(f"weather for day {nvar}: Dense freezing drizzle.")
             if counter == {args.days}:
                 break
         if codes == 61:
-            counter += 1
-            print(f"weather for day {counter}: Slight rain.")
+
+            print(f"weather for day {nvar}: Slight rain.")
             if counter == {args.days}:
                 break
         if codes == 63:
-            counter += 1
-            print(f"weather for day {counter}: Moderate rain.")
+
+            print(f"weather for day {nvar}: Moderate rain.")
             if counter == {args.days}:
                 break
         if codes == 65:
-            counter += 1
-            print(f"weather for day {counter}: Heavy rain.")
+
+            print(f"weather for day {nvar}: Heavy rain.")
             if counter == {args.days}:
                 break
         if codes == 66:
-            counter += 1
-            print(f"weather for day {counter}: Light freezing rain.")
+
+            print(f"weather for day {nvar}: Light freezing rain.")
             if counter == {args.days}:
                 break
         if codes == 67:
-            counter += 1
-            print(f"weather for day {counter}: Heavy freezing rain.")
+
+            print(f"weather for day {nvar}: Heavy freezing rain.")
             if counter == {args.days}:
                 break
         if codes == 71:
-            counter += 1
-            print(f"weather for day {counter}: Slight snowfall.")
+
+            print(f"weather for day {nvar}: Slight snowfall.")
             if counter == {args.days}:
                 break
         if codes == 73:
-            counter += 1
-            print(f"weather for day {counter}: Moderate snowfall.")
+
+            print(f"weather for day {nvar}: Moderate snowfall.")
             if counter == {args.days}:
                 break
         if codes == 75:
-            counter += 1
-            print(f"weather for day {counter}: Heavy snowfall.")
+
+            print(f"weather for day {nvar}: Heavy snowfall.")
             if counter == {args.days}:
                 break
         if codes == 77:
-            counter += 1
-            print(f"weather for day {counter}: Snow grains.")
+
+            print(f"weather for day {nvar}: Snow grains.")
             if counter == {args.days}:
                 break
         if codes == 80:
-            counter += 1
-            print(f"weather for day {counter}: Slight rain showers.")
+
+            print(f"weather for day {nvar}: Slight rain showers.")
             if counter == {args.days}:
                 break
         if codes == 81:
-            counter += 1
-            print(f"weather for day {counter}: Moderate rain showers.")
+
+            print(f"weather for day {nvar}: Moderate rain showers.")
             if counter == {args.days}:
                 break
         if codes == 82:
-            counter += 1
-            print(f"weather for day {counter}: Violent rain showers.")
+
+            print(f"weather for day {nvar}: Violent rain showers.")
             if counter == {args.days}:
                 break
         if codes == 85:
-            counter += 1
-            print(f"weather for day {counter}: Slight snow showers.")
+
+            print(f"weather for day {nvar}: Slight snow showers.")
             if counter == {args.days}:
                 break
         if codes == 86:
-            counter += 1
-            print(f"weather for day {counter}: Heavy snow showers.")
+
+            print(f"weather for day {nvar}: Heavy snow showers.")
             if counter == {args.days}:
                 break
         if codes == 95:
-            counter += 1
-            print(f"weather for day {counter}: Thunderstorm.")
+
+            print(f"weather for day {nvar}: Thunderstorm.")
             if counter == {args.days}:
                 break
         if codes == 96:
-            counter += 1
-            print(f"weather for day {counter}: Thunderstorm with slight hail.")
+
+            print(f"weather for day {nvar}: Thunderstorm with slight hail.")
             if counter == {args.days}:
                 break
         if codes == 99:
-            counter += 1
-            print(f"weather for day {counter}: Thunderstorm with heavy hail.")
+
+            print(f"weather for day {nvar}: Thunderstorm with heavy hail.")
             if counter == {args.days}:
                 break
 print("------------------------------------------------------------------------------")
 
+#i have to admit: this part was made by ai. 
+# i tried to fix it myself but i just couldn't fucking understand.
+#i caved, but i made it explain each step to me so at least i understood the code instead of blindly copy pasting
+# im so fucking sorry
+# im weak
+
 countt = 0
+
 for temps1 in response["daily"]["temperature_2m_max"]:
     if temps1 is not None:
         countt += 1
-        if countt == args.days:
-            break
+        if countt == 1:
+            mvar = day1
+        if countt == 2:
+            mvar = day2
+        if countt == 3:
+            mvar = day3
+        if countt == 4:
+            mvar = day4
+        if countt == 5:
+            mvar = day5
+        if countt == 6:
+            mvar = day6
+        if countt == 7:
+            mvar = day7
+        if countt == 8:
+            mvar = day8
+        if countt == 9:
+            mvar = day9
+        if countt == 10:
+            mvar = day10
+        if countt == 11:
+            mvar = day11
+        if countt == 12:
+            mvar = day12
+        if countt == 13:
+            mvar = day13
+        if countt == 14:
+            mvar = day14
+        if countt == 15:
+            mvar = day15
+        if countt == 16:
+            mvar = day16
 
-count = 0
-for temps in response["daily"]["temperature_2m_min"]:
+
+
+    temps = response["daily"]["temperature_2m_min"][countt - 1]
     if temps is not None:
-        count += 1
-        print(f"({args.temp_unit}) Minimum and maximum 2 meter temperatures for Day {count}: {temps} and {temps1} {args.temp_unit}")
-        if count == args.days:
+
+        print(f"({args.temp_unit}) Minimum and maximum 2 meter temperatures for Day {mvar}: {temps} and {temps1} {args.temp_unit}")
+        if countt == args.days:
             break
 
 print("------------------------------------------------------------------------------") 
