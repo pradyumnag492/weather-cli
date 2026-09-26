@@ -3,7 +3,7 @@ A weather cli written in python. My first big python project
 
 **AI USAGE**
 
-I used AI for debugging and to write code, but only when I just couldn't figure it out at all. See [this commit](https://github.com/pradyumnag492/weather-cli/commit/3703df039473d9ac735fc100c0981d012f8f8553) lines 289-293
+I used AI for debugging and to write code, but only when I just couldn't figure it out at all. See [this commit](https://github.com/pradyumnag492/weather-cli/commit/3703df039473d9ac735fc100c0981d012f8f8553), lines 289-293.
 
 **PR's and contributing**
 
