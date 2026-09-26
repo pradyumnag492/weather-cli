@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "weather-cli"
+version = "1.0"
+description = "Simple CLI tool that returns weather data from the Open-Meteo API."
+dependencies = [
+    "requests"
+]
+
+[tool.setuptools]
+py-modules = ["main"]
+
+[project.scripts]
+weather = "main:main"
