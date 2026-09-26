@@ -4,7 +4,7 @@ A weather cli written in python. My first big python project
 **INSTALLATION**
 
 
-make sure python is installed
+make sure python is installed, then
 run this command
 
 pip install git+https://github.com/pradyumnag492/weather-cli.git
