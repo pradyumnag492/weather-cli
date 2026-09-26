@@ -1,4 +1,3 @@
-
 import requests
 import argparse
 import json
@@ -6,8 +5,8 @@ import sys
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument("city", type=str, help="enter your city")
-parser.add_argument("country", type=str, help="enter your country, full country name")
+parser.add_argument("-c", "--city", type=str, help="enter your city")
+parser.add_argument("-co", "--country", type=str, help="enter your country, full country name")
 parser.add_argument("-tu", "--temp_unit", type=str, default="fahrenheit", choices=["celsius", "fahrenheit"], help="enter your preferred temperature unit, celsius or fahrenheit")
 parser.add_argument("-wsu", "--wind_speed_unit", type=str, default="mph", choices=["kmh", "mph", "knots", "ms"], help="enter preferred wind speed unit")
 parser.add_argument("-pru", "--precipitation_unit", type=str, default="inch", choices=["inch", "mm"], help="enter preferred precipitation unit")
@@ -49,8 +48,12 @@ response = requests.get(f"https://api.open-meteo.com/v1/forecast?latitude={lat}&
 
 response2 = requests.get(f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&daily=weather_code,temperature_2m_min,temperature_2m_max,precipitation_probability_max,rain_sum,showers_sum,snowfall_sum,precipitation_sum&wind_speed_unit={args.wind_speed_unit}&temperature_unit={args.temp_unit}&precipitation_unit={args.precipitation_unit}&forecast_days={args.days}")
 if response2.status_code == 200:
+
+    print("------------------------------------------------------------------------------")
+
     print(f"Success! Weather found.")
-    print(response)
+
+
 
 else: print(f"Error {response.status_code}. Could not find weather")
 if "daily" in response and "time" in response["daily"] and len(response["daily"]["time"]) > 0:
@@ -100,6 +103,8 @@ if "daily" in response and "time" in response["daily"] and len(response["daily"]
 
 if "daily" in response and "time" in response["daily"] and len(response["daily"]["time"]) > 15:
     day16 = response["daily"]["time"][15]
+
+print("------------------------------------------------------------------------------")
 
 counter = 0
 
@@ -340,12 +345,206 @@ for temps1 in response["daily"]["temperature_2m_max"]:
             break
 
 print("------------------------------------------------------------------------------") 
+l = 0
+for probs in response["daily"]["precipitation_probability_max"]:
+    if probs is not None:
+        l += 1
+        if l == 1:
+            e = day1
+        if l == 2:
+            e = day2
+        if l == 3:
+            e = day3
+        if l == 4:
+            e = day4
+        if l == 5:
+            e = day5
+        if l == 6:
+            e = day6
+        if l == 7:
+            e = day7
+        if l == 8:
+            e = day8
+        if l == 9:
+            e = day9
+        if l == 10:
+            e = day10
+        if l == 11:
+            e = day11
+        if l == 12:
+            e = day12
+        if l == 13:
+            e = day13
+        if l == 14:
+            e = day14
+        if l == 15:
+            e = day15
+        if l == 16:
+            e = day16
 
+        print(f"Precipitation probabilities for Day {e} is {probs} %.")
 
+print("------------------------------------------------------------------------------") 
+l = 0
+for sums in response["daily"]["rain_sum"]:
+    if sums is not None:
+        l += 1
+        if l == 1:
+            e = day1
+        if l == 2:
+            e = day2
+        if l == 3:
+            e = day3
+        if l == 4:
+            e = day4
+        if l == 5:
+            e = day5
+        if l == 6:
+            e = day6
+        if l == 7:
+            e = day7
+        if l == 8:
+            e = day8
+        if l == 9:
+            e = day9
+        if l == 10:
+            e = day10
+        if l == 11:
+            e = day11
+        if l == 12:
+            e = day12
+        if l == 13:
+            e = day13
+        if l == 14:
+            e = day14
+        if l == 15:
+            e = day15
+        if l == 16:
+            e = day16
 
+        print(f"({args.precipitation_unit}) Rain sum Day {e} is {sums} {args.precipitation_unit}.")
+print("------------------------------------------------------------------------------") 
+l = 0
+for sumss in response["daily"]["showers_sum"]:
+    if sumss is not None:
+        l += 1
+        if l == 1:
+            e = day1
+        if l == 2:
+            e = day2
+        if l == 3:
+            e = day3
+        if l == 4:
+            e = day4
+        if l == 5:
+            e = day5
+        if l == 6:
+            e = day6
+        if l == 7:
+            e = day7
+        if l == 8:
+            e = day8
+        if l == 9:
+            e = day9
+        if l == 10:
+            e = day10
+        if l == 11:
+            e = day11
+        if l == 12:
+            e = day12
+        if l == 13:
+            e = day13
+        if l == 14:
+            e = day14
+        if l == 15:
+            e = day15
+        if l == 16:
+            e = day16
 
+        print(f"({args.precipitation_unit}) Showers sum Day {e} is {sumss} {args.precipitation_unit}.")
 
+print("------------------------------------------------------------------------------") 
 
+l = 0
+
+for sumsss in response["daily"]["snowfall_sum"]:
+    if sumsss is not None:
+        l += 1
+        if l == 1:
+            e = day1
+        if l == 2:
+            e = day2
+        if l == 3:
+            e = day3
+        if l == 4:
+            e = day4
+        if l == 5:
+            e = day5
+        if l == 6:
+            e = day6
+        if l == 7:
+            e = day7
+        if l == 8:
+            e = day8
+        if l == 9:
+            e = day9
+        if l == 10:
+            e = day10
+        if l == 11:
+            e = day11
+        if l == 12:
+            e = day12
+        if l == 13:
+            e = day13
+        if l == 14:
+            e = day14
+        if l == 15:
+            e = day15
+        if l == 16:
+            e = day16
+
+        print(f"({args.precipitation_unit}) Snowfall sum Day {e} is {sumsss} {args.precipitation_unit}.")
+print("------------------------------------------------------------------------------") 
+l = 0
+
+for sumssss in response["daily"]["precipitation_sum"]:
+    if sumssss is not None:
+        l += 1
+        if l == 1:
+            e = day1
+        if l == 2:
+            e = day2
+        if l == 3:
+            e = day3
+        if l == 4:
+            e = day4
+        if l == 5:
+            e = day5
+        if l == 6:
+            e = day6
+        if l == 7:
+            e = day7
+        if l == 8:
+            e = day8
+        if l == 9:
+            e = day9
+        if l == 10:
+            e = day10
+        if l == 11:
+            e = day11
+        if l == 12:
+            e = day12
+        if l == 13:
+            e = day13
+        if l == 14:
+            e = day14
+        if l == 15:
+            e = day15
+        if l == 16:
+            e = day16
+
+        print(f"({args.precipitation_unit}) Precipitation sum Day {e} is {sumssss} {args.precipitation_unit}.")
+print("------------------------------------------------------------------------------") 
 
 
 
