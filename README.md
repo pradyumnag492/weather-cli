@@ -6,6 +6,8 @@ make sure python is installed
 run this command
 
 pip install git+https://github.com/pradyumnag492/weather-cli.git
+
+
 **AI USAGE**
 
 I used AI for debugging and to write code, but only when I just couldn't figure it out at all. See [this commit](https://github.com/pradyumnag492/weather-cli/commit/3703df039473d9ac735fc100c0981d012f8f8553), lines 289-293.
