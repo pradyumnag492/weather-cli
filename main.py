@@ -56,7 +56,7 @@ def main():
     
     
     
-    else: print(f"Error {response.status_code}. Could not find weather")
+    else: print(f"Error {response2.status_code}. Could not find weather")
     if "daily" in response and "time" in response["daily"] and len(response["daily"]["time"]) > 0:
         day1 = response["daily"]["time"][0]
     
